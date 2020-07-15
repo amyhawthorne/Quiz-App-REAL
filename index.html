@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>The Office Trivia Quiz: A 30-Question Quiz About Michael Scott, Jim Halpern, Pam Beasley, Dwight Schrute, and the Rest of the The Dunder Mifflin Staff
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+
+        // I plan to fix remove much of the text from the html and use js to render the appropriate text strings. 
+        // Keeping it here for reference for now as I work through how to structure the functions
+        
+        <header> 
+                <a href="index.html">
+                <img class="Logo" src="Dunder_Mifflin,_Inc.svg" alt="Dunder Mifflin Logo" />
+                </a>  
+                <h1 class="title">Do You Know Dunder Mifflin?</h1>
+        </header>
+
+        <main> 
+
+        <div class="invite-to-take-quiz">
+            <h2 class="subtitle">A 30-Question Quiz for the Ultimate Fan of The Office TV Series</h2>
+                <p class ="intro">So you think you know the office the way Michael Scott knows management? 
+                <br>The way Kevin Malone knows chili? 
+                <br>The way Angela Martin knows cats? 
+                <br>Now is your chance to prove it with the ultimate quiz all about the hilarious staff of Dunder Mifflin.
+                </p>
+                
+                <button type="get-started">Get Started</button>
+        </div>
+
+        
+        <form class="take-the-quiz-form" action="" method ="post">
+
+            <h3 class="question-counter">Question 1 of 30</h3>
+            
+            <fieldset>
+              <legend class="question">What did Angela do with the money she got for selling her engagement ring from Andy?</legend>
+                <input type="radio" name="Option" id="AnswerA" value="0" required>
+                <label for="AnswerA">Bought a new cat named Princess Lady</label>
+                <br>
+                <input type="radio" name="Option" id="AnswerB" value="0">
+                <label for="AnswerB">Built a house for her cats</label>
+                <br>
+                <input type="radio" name="Option" id="AnswerC" value="0">
+                <label for="AnswerC">Purchased a cat-themed cashmere wardrobe</label>
+                <br>
+                <input type="radio" name="Option" id="AnswerD" value="0">
+                <label for="AnswerD">Threw an elaborate birthday party for her cat, Sprinkles</label>
+                <br>
+                <button type="submit">Submit</button>
+              </legend>
+          </fieldset>  
+        
+        <div class="when-answer-is-incomplete">
+            <p class="error-incomplete-message">(You have to select an answer before going to the next question.)</p>
+        </div>
+        </form>  
+
+        <div class="single-quiz-answer-result">
+
+            <h3 class="question-counter">Question 1 of 30</h3>
+
+            <div class="when-answer-is-correct">
+                <p class="correct-image"></p>
+                <p class="confirmed-correct-answer">'Bought a new cat named Princess Lady' is correct! Way to go!</p>
+            </div>
+
+            <div class="when-answer-is-incorrect">  
+                <p class="incorrect-image"></p>
+                <p class="confirmed-incorrect-answer">'Built a house for her cats' is not correct.  The correct answer is 'Bought a new cat named Princess Lady.' Better luck next time.</p>
+            </div>
+
+            <div class="next-button">
+            <button type="next">Next Question</button>
+            </div>
+
+
+        <div class="completed-quiz-score">
+
+            <div class="high-score">
+                <p class="this-many-correct-high">You got <b>29</b> out of <b>30</b> answers correct!</p>
+                <p class="results-ranking-message-high">David Wallace is calling! You're about to receive a promotion from Corporate.</p> 
+            </div>
+        
+            <div class="medium-score">
+                <p class="this-many-correct-medium">You got <b>19</b> out of <b>30</b> answers correct.</p>
+                <p class="results-ranking-message-medium">Not bad! You could soon be named assistant to the regional manager.</p> 
+            </div>
+
+            <div class="low-score">
+                <p class="this-many-correct-low">You got <b>8</b> out of <b>30</b> answers correct.</p>
+                <p class="results-ranking-message-low">Call Creed and Meredith from Quality Assurance. Too much time in the breakroom! Back to work.</p> 
+            </div>
+
+            <div class="retake-share">
+                <button type="retake">Retake the Quiz</button>
+                <br>
+                <br>
+                <button type="share">Share with Friends</button>
+            </div>
+    
+
+        </div>
+
+    
+       
+          
+
+      </main>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src='index.js'></script>
+</html>

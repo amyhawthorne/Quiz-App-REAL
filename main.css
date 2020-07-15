@@ -1,0 +1,117 @@
+/*
+This CSS is not up to date.  It is copied over from my initial wireframe.
+*/
+
+* {
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+.logo {
+    max-width: 150px;
+}
+
+.intro {
+    font-style: italic;
+    font-weight: 200;
+}
+
+.invite-to-take-quiz {
+    border-style: solid;
+    border-width: thin;
+    border-color: lightgray;
+    margin: 10px;
+    padding: 5%;
+   
+}
+
+.take-the-quiz-form {
+    font-size: 20px;
+    border-style: solid;
+    border-width: thin;
+    border-color: lightgray;
+    margin: 10px;
+    padding: 5%; 
+
+}
+
+.take-the-quiz-form-incomplete {
+    font-size: 20px;
+    border-style: solid;
+    border-width: thin;
+    border-color: lightgray;
+    margin: 10px;
+    padding: 5%;     
+}
+
+.error-message {
+    font-style: italics, red;
+}
+
+
+.question {
+    font-size: larger;
+}
+
+.single-answer-result-correct {
+    font-size: 20px;
+    border-style: solid;
+    border-width: thin;
+    border-color: lightgray;
+    margin: 10px;
+    padding: 5%;    
+
+}
+
+.single-answer-result-incorrect {
+    font-size: 20px;
+    border-style: solid;
+    border-width: thin;
+    border-color: lightgray;
+    margin: 10px;
+    padding: 5%;     
+
+}
+
+.quiz-results-good-score {
+    font-size: 20px;
+    border-style: solid;
+    border-width: thin;
+    border-color: lightgray;
+    margin: 10px;
+    padding: 5%;     
+}
+
+.quiz-results-ok-score {
+    font-size: 20px;
+    border-style: solid;
+    border-width: thin;
+    border-color: lightgray;
+    margin: 10px;
+    padding: 5%; 
+}
+
+.quiz-results-bad-score {
+    font-size: 20px;
+    border-style: solid;
+    border-width: thin;
+    border-color: lightgray;
+    margin: 10px;
+    padding: 5%; 
+
+}
+
+
+.results-ranking-message {
+    font-size: large;
+}
+
+.this-many-correct {
+    font-size: larger;
+
+}
+
+
+
+
+
