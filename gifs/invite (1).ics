@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+DTSTART:20200916T220000Z
+DTEND:20200916T223000Z
+DTSTAMP:20200910T173910Z
+ORGANIZER;CN=taylor.reyes@thinkful.com:mailto:taylor.reyes@thinkful.com
+UID:ichdhuddug8gbd7l14utq765go@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE
+ ;CN=taylor.reyes@thinkful.com;X-NUM-GUESTS=0:mailto:taylor.reyes@thinkful.c
+ om
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE
+ ;CN=amy.hawthorne@gmail.com;X-NUM-GUESTS=0:mailto:amy.hawthorne@gmail.com
+X-MICROSOFT-CDO-OWNERAPPTID:884774766
+CREATED:20200910T173907Z
+DESCRIPTION:Event Name: Bloc: 30 Minute ASM Meeting\n\nThis will be a 30-mi
+ nute-long check-in via Zoom located at: https://bit.ly/join-taylor-zoom\n\n
+ \nInstructions:\n\n* Please note in your appointment details the two primar
+ y items you’d like to focus on for this check-in.\n* If you would like addi
+ tional time to speak with me\, please reach out to me directly to schedule 
+ a separate/longer session.\n\n\nLocation: https://bit.ly/join-taylor-zoom\n
+ \nReason for our call today: Plan for finishing course\n\nCancellation Poli
+ cy: Thinkful/Bloc requires 24 hours advance notice for cancellation of meet
+ ings with Mentors\, Academic Success Managers\, Career Coaches\, or Technic
+ al Evaluators. No call\, no show sessions may result in a withdrawal from t
+ he program.\n\nNeed to make changes to this event?\nCancel: https://calendl
+ y.com/cancellations/AEUOMLAULTUAWQVN\nReschedule: https://calendly.com/resc
+ hedulings/AEUOMLAULTUAWQVN\n\nPowered by Calendly.com\n\n\n-::~:~::~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nPl
+ ease do not edit this section of the description.\n\nView your event at htt
+ ps://www.google.com/calendar/event?action=VIEW&eid=aWNoZGh1ZGR1ZzhnYmQ3bDE0
+ dXRxNzY1Z28gYW15Lmhhd3Rob3JuZUBt&tok=MjUjdGF5bG9yLnJleWVzQHRoaW5rZnVsLmNvbW
+ U1OWUzNGY4ZTEzNWEwZjgyMzlkOTUyMjczMjY0ZGYwZTVjMzc0ODg&ctz=America%2FLos_Ang
+ eles&hl=en&es=1.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20200910T173908Z
+LOCATION:https://bit.ly/join-taylor-zoom
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Amy Hawthorne and Taylor Reyes
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
