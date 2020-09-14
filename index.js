@@ -11,9 +11,9 @@ const STORE = {
 
             },
             correctAnswer: "Devon",
-            correctAnswerImage: "question_1_right.gif",
+            correctAnswerImage: "gifs/question_1_right.gif",
             correctAnswerAlt: "An animated gif of Michael Scott with a serious face",
-            incorrectAnswerImage: "wrong-answer-dwight.gif",
+            incorrectAnswerImage: "gifs/wrong-answer-dwight.gif",
             incorrectAnswerAlt: "Dwight makes an angry face"
         },
         {
@@ -26,9 +26,11 @@ const STORE = {
                 d: "Cattle",
 
             },
-            correctAnswer: "a",
-            correctAnswerImage: "question_2_right.gif",
-            alt: "an animated gif of Dwight Schrute saying Its True", 
+            correctAnswer: "Beet",
+            correctAnswerImage: "gifs/question_2_right.gif",
+            alt: "an animated gif of Dwight Schrute saying Its True",
+            incorrectAnswerImage: "gifs/wrong-answer-dwight.gif",
+            incorrectAnswerAlt: "Dwight makes an angry face" 
         },
         {
 
@@ -41,9 +43,11 @@ const STORE = {
                 d: "Phyllis Vance",
 
             },
-            correctAnswer: "a",
-            correctAnswerImage: "question_3_right.gif",
-            alt: "An animated gif of Creed winking"
+            correctAnswer: "Creed Bratton",
+            correctAnswerImage: "gifs/question_3_right.gif",
+            alt: "An animated gif of Creed winking",
+            incorrectAnswerImage: "gifs/wrong-answer-dwight.gif",
+            incorrectAnswerAlt: "Dwight makes an angry face"
         },
     ],
     showIntroText: true,
@@ -85,7 +89,7 @@ function renderQuiz(STORE) {
     if (STORE.currentQuestion === null) {
         $('.show-question').hide();
         $('.show-progress').hide();
-        $('.show-score').hide();
+        //$('.show-score').hide();
         $('.completed-quiz-score').hide();
     } else {
         //Generates HTML to render quiz questions
@@ -103,7 +107,8 @@ function renderQuiz(STORE) {
             <label for "${STORE.currentQuestion.answers.d}">"${STORE.currentQuestion.answers.d}"</label><br>`
         const questionHtml = `<div>
             <form id="quiz-questions"
-            <fieldset>
+            <form method="POST" action="/submit/">
+            <fieldset name="mulitple choice questions">
             <legend class="question">${STORE.currentQuestion.question}</legend>
             ${answerOptionsHtml}
             <button type="submit" id="submit-button">Submit</button>
@@ -117,7 +122,7 @@ function renderQuiz(STORE) {
         $('.show-progress').show();
         $('.show-score').show();
         $('.completed-quiz-score').hide();
-        $('.feedback-on-answer').hide();
+        $('.feedback-on-answer').show();
     };
 
     //Event listener to start quiz. Switches out "Store Intro" HTML for first quiz question
@@ -145,63 +150,78 @@ function renderScore() {
     let incorrectAnswerTally = (STORE.score.incorrectAnswers);
 
     //generates html for message that appears based on whether selected answer is correct or incorrect
-    const feedbackIfCorrectHtml = `Your answer is correct! Call the party planning committee and order whatever 
-    Angela permits you to order! (Please stay within budget)
-        <img class="Correct-Answer" src="${STORE.currentQuestion.correctAnswerImage}" alt="${STORE.currentQuestion.correctAnswerAlt}" />
-        <button type="button" id="next-question-button">Next Question</button>`
-    const feedbackIfIncorrectHtml = `Your answer is incorrect. As Michael would say: It feels like somebody took my heart and dropped it into a bucket of boiling tears.
-        <img class="Incorrect-Answer" src="${STORE.currentQuestion.incorrectAnswerImage}" alt="${STORE.currentQuestion.incorrectAnswerAlt}"` 
+    const feedbackIfCorrectHtml = 
+    `<div class="feedback-correct">
+        Your answer is correct! Call the party planning committee and order whatever Angela permits you to order! (Please stay within budget).
+        <img class="Correct-Answer" src="${STORE.currentQuestion.correctAnswerImage}" alt="${STORE.currentQuestion.correctAnswerAlt}"/>  
+        </div>`;
+    
+    const feedbackIfIncorrectHtml = 
+    `<div class="feedback-incorrect">
+        Your answer is incorrect. As Michael would say: It feels like somebody took my heart and dropped it into a bucket of boiling tears.
+        <img class="Incorrect-Answer" src="${STORE.currentQuestion.incorrectAnswerImage}" alt="${STORE.currentQuestion.incorrectAnswerAlt}"/> 
+        </div>`; 
     
         //determine whether or not an answer is correct or incorrect and logs it to the STORE, calculating the total correct score and incorrect score
     
     $('#submit-button').on('click', () => {
         event.preventDefault();
-        $('.show-question.option').required = true;
+        $('#quiz-questions.option').required = true;
+        $('.feedback-on-answer').show();
         const selected = $('input:checked');
-        let answer = selected.val();
-        console.log(answer + ` was selected`);
-        let correctAnswerFound = false;
+        let selectedAnswerValue = selected.val();
+        console.log(selectedAnswerValue + ` was selected`);
+        let correctAnswerFound = selectedAnswerValue === STORE.currentQuestion.correctAnswer;
         
-        for (let answerKey in STORE.currentQuestion.answers) {
+        /*for (let answerKey in STORE.currentQuestion.answers) {
             let answerValue = STORE.currentQuestion.answers[answerKey]; 
             if (answerValue === STORE.currentQuestion.correctAnswer) {
             correctAnswerFound === true;
             console.log(answerValue);
             console.log(STORE.currentQuestion.correctAnswer);
             };
-        };
+        };*/
 
         if (correctAnswerFound === true) {
-            let correctAnswerTally = (STORE.score.correctAnswers + 1);
+            correctAnswerTally = (STORE.score.correctAnswers + 1);
             console.log(correctAnswerTally + ` is the number of correct answers counted`);
             console.log(`A correct answer was counted`);
-            console.log(answerValue);
             $('.feedback-on-answer').html(feedbackIfCorrectHtml);
         } 
         else {
-            incorrectAnswerTally = (STORE.score.incorrectAnswers++);
+            incorrectAnswerTally = (STORE.score.incorrectAnswers + 1);
             //console.log("An incorrect answer was counted");
             console.log(incorrectAnswerTally + ` is the number of incorrect answers counted`);
             $('.feedback-on-answer').html(feedbackIfIncorrectHtml);
         };
+
+        console.log(correctAnswerFound);
+
+        
+
+
        
         //generates score html
-        const renderScoreHtml = `${correctAnswerTally} answers correct out of 30`;
+        const renderScoreHtml = `${correctAnswerTally} answers correct out of 30
+        <p><button type="button" id="next-question-button">Next Question</button></p>`;
         $('.show-score').html(renderScoreHtml);
         console.log($('.show-score').length);
         console.log(`Show Score has rendered`);
-        $('.show-question').hide();
-        $('.feedback-on-answer').show();
         console.log("submit has been clicked");
         renderEverything(STORE);
+
     });
+
+    $("#next-question-button").on('click', () => {
+        console.log(`Next Question has been clicked`)
+        });
 };
 
 function renderFinalScore() {
     console.log('Final Score has rendered');
     //generates html to show user their final score once the 30 questions have all been answered. 
-    let correctAnswerTally = (STORE.score.correctAnswers + 1);
-    let incorrectAnswerTally = (STORE.score.incorrectAnswers + 1);
+    let correctAnswerTally = (STORE.score.correctAnswers);
+    let incorrectAnswerTally = (STORE.score.incorrectAnswers);
     let renderFinalScorePoorHtml = `You got ${correctAnswerTally} out of 30 answers correct! Too much time in the breakroom. Back to work! 
     <button type="button" id="try-again">Try Again</button>`
     $('.completed-quiz-score').html(renderFinalScorePoorHtml);
